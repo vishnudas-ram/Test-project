@@ -1,0 +1,9 @@
+<!-- @for (item of arr; track $index) {
+    <div class="main">{{item}}</div>
+} -->
+
+<cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+  <div *cdkVirtualFor="let item of arr" class="item">
+    {{ item }}
+  </div>
+</cdk-virtual-scroll-viewport>

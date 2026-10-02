@@ -1,0 +1,7 @@
+
+<label>SEND MESSAGE HERE</label><br>
+<input type="text" placeholder="type message here.." [(ngModel)]="messageText">
+<button (click)="sendMessage()">SEND</button>
+<br><br>
+<label>RESPONSE</label><br>
+<input type="text" disabled [value]="responseMessage()">

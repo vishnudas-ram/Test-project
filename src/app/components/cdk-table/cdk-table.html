@@ -1,0 +1,30 @@
+<table cdk-table [dataSource]="arr" class="custom-cdk-table">
+
+  <!-- ID Column -->
+  <ng-container cdkColumnDef="id">
+    <th cdk-header-cell *cdkHeaderCellDef> ID </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.id }} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container cdkColumnDef="age">
+    <th cdk-header-cell *cdkHeaderCellDef> Age </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.age }} </td>
+  </ng-container>
+
+  <!-- Category Column -->
+  <ng-container cdkColumnDef="dob">
+    <th cdk-header-cell *cdkHeaderCellDef> dob </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.dob | date: 'short'}}</td>
+  </ng-container>
+
+  <!-- Price Column -->
+  <ng-container cdkColumnDef="name">
+    <th cdk-header-cell *cdkHeaderCellDef> name </th>
+    <td cdk-cell *cdkCellDef="let element"> {{ element.name }} </td>
+  </ng-container>
+
+  <!-- Header and Row Definitions -->
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</table>

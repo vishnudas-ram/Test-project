@@ -1,0 +1,13 @@
+<input type="file" (change)="onFilesSelected($event)" multiple />
+
+<!-- Uploading സമയത്തുള്ള പ്രോഗ്രസ് ബാർ -->
+<div *ngIf="uploadProgress > 0 && uploadProgress < 100">
+  <progress [value]="uploadProgress" max="100"></progress>
+  <span>Uploading: {{ uploadProgress }}%</span>
+</div>
+
+<!-- OCR പ്രോസസ്സിംഗ് സമയത്തുള്ള സ്റ്റാറ്റസ് -->
+<div *ngIf="isProcessingOCR">
+  <div class="spinner"></div>
+  <p>Extracting data using OCR... Please wait.</p>
+</div>

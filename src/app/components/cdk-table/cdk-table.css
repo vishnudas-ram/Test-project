@@ -1,0 +1,24 @@
+.custom-cdk-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header Cells */
+.custom-cdk-table th {
+  background-color: #f4f4f4;
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Body Cells */
+.custom-cdk-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Row Hover Effect */
+.custom-cdk-table tr:hover {
+  background-color: #f9f9f9;
+}

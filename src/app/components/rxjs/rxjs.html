@@ -1,0 +1,44 @@
+<div>
+    @if(isLoading()) {
+        <p>loading ...</p>
+    } @else {
+ <table>
+        <thead>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>DOB</th>
+        </thead>
+        @for(user of filteredArr();track user.id) {
+        <tbody>
+          <td appHightlights [textColor]="'yellow'">{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.dob}}</td>
+        </tbody>
+        }
+        
+    </table>
+    }
+</div>
+<div>
+    <label>Select item</label>
+    <select (change)="onSelect($event)">
+        <option [value]="null">select</option>
+        @for (item of arr(); track $index) {
+           <option [value]="item.name">{{item.name}}</option>
+        }
+    </select>
+</div>
+<input type="text" [(ngModel)]="searchText" (ngModelChange)="onSearch()"
+placeholder="Enter Text for search">
+
+<div><button (click)="eventButtonClick()">click event</button></div>
+<input type="text" placeholder="enter Text" [formControl]="searchString">
+
+@for (item of asyncData|async|filterPipe:'name':searchText; track $index) {
+    <p>{{item.name|lowercase|slice :0:3}}</p>
+    <P>{{item.dob|date:'shortDate'}}</P>
+    <P>{{item |json}}</P>
+    <p>{{item.age|currency:'IND'}}</p>
+} @empty {
+    <p>no filter data found..</p>
+}
