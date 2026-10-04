@@ -52,4 +52,8 @@ export const routes: Routes = [
         path: 'file-upload',
         loadComponent: ()=> import('../app/components/file-upload/file-upload').then(m=> m.FileUpload)
     },
+    {
+        path: 'fetch-promise',
+        loadComponent: ()=> import('../app/components/fetch-promise/fetch-promise').then(m=> m.FetchPromise)
+    }
 ];

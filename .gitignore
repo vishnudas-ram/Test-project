@@ -1,8 +1,39 @@
-# Ignore node modules
+# Chrome / Browser Dev Tools Metadata & Local States
+*.json.chrome
+*chrome*.json
+*devtools*.json
+metadata.json
+com.chrome.devtools.json
+
+# Node & Build Outputs
 node_modules/
+dist/
+tmp/
+out-compiled/
+.angular/
 
-# Ignore environment variables / secrets
-.env
+# IDEs and Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Ignore macOS system files
+# Testing & Coverage
+/coverage
+/cypress/videos
+/cypress/screenshots
+
+# System Files
 .DS_Store
+Thumbs.db
+
+# Environment Files
+.env
+.env.local

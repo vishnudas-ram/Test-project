@@ -1,6 +1,7 @@
-import { afterEveryRender, AfterViewInit, Component, effect, ElementRef, OnInit, signal, ViewChild, viewChild } from '@angular/core';
+import { afterEveryRender, AfterViewInit, Component, effect, ElementRef, inject, OnInit, signal, ViewChild, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SanitizeHtmlPipe } from "../../pipes/sanitizer/sanitize-html-pipe";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -67,4 +68,5 @@ export class Dashboard implements OnInit {
     }
     console.log(uniqueArr);
   }
+
 }
